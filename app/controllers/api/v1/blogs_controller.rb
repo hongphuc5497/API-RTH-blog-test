@@ -1,5 +1,5 @@
 class Api::V1::BlogsController < Api::ApisController
-  before_action :set_blog, except: %i[index create destroy]
+  before_action :set_blog, except: %i[index create]
   before_action :authenticate_user, only: %i[create update destroy]
 
   def index
