@@ -1,5 +1,5 @@
 class Api::V1::BlogsController < Api::ApisController
-  before_action :set_blog, except: %i[index create]
+  before_action :set_blog, except: %i[index create destroy]
   before_action :authenticate_user, only: %i[create update destroy]
 
   def index
@@ -44,15 +44,12 @@ class Api::V1::BlogsController < Api::ApisController
   end
 
   def destroy
-    if @blog.destroy
-      render head :no_content
-    else
-      render json: {
-        error: @blog.errors.full_messages
-      }, status: :unprocessable_entity
-    end
+    @blog.destroy
+    render json: {
+      message: 'Delete success'
+    }, status: :ok
   end
-
+  
   private
 
   def set_blog
