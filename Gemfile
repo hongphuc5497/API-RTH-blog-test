@@ -53,3 +53,5 @@ gem 'active_model_serializers'
 gem 'kaminari'
 
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'ransack'
