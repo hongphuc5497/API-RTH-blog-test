@@ -3,8 +3,8 @@ class Api::V1::BlogsController < Api::ApisController
   before_action :authenticate_user, only: %i[create update destroy]
 
   def index
-    blog = Blog.page(@page_number || 1)
-               .per(@page_size || 10)
+    blog = Blog.page(params[:page] || 1)
+               .per(6)
     render json: {
       blogs: blog,
       meta: {
