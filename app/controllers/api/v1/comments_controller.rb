@@ -30,11 +30,13 @@ class Api::V1::CommentsController < Api::ApisController
   end
 
   def destroy
-    if @comment.destroy
-      render head :no_content
+    if @blog.destroy
+      render json: {
+        message: 'Delete success'
+      }, status: :ok
     else
       render json: {
-        error: @comment.errors.full_messages
+        error: @blog.errors.full_messages
       }, status: :unprocessable_entity
     end
   end
