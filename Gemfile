@@ -49,7 +49,7 @@ gem 'jwt'
 gem 'rack-cors'
 
 # Paginate resources
-gem 'active_model_serializers'
+gem 'active_model_serializers', '>= 0.10.14'
 gem 'kaminari'
 
 gem 'dotenv-rails', groups: [:development, :test]
