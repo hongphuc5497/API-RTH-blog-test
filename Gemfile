@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
+gem 'rails', '~> 7.1.5', '>= 7.1.5.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -50,8 +50,8 @@ gem 'rack-cors'
 
 # Paginate resources
 gem 'active_model_serializers'
-gem 'kaminari'
+gem 'kaminari', '>= 1.2.1'
 
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem 'ransack'
+gem 'ransack', '>= 2.3.1'
